@@ -1,12 +1,12 @@
 const express = require('express');
 const { addUsers, getUser, updateUser, deleteUser } = require('./services/userService');
-// const { connectToDb } = require('./database');
+const { connectToDb } = require('./database');
 
 
 const app = express();
 const router = express.Router();
 app.use(express.json());
-// app.use(connectToDb);
+app.use(connectToDb);
 app.use('/', router);
 
 
